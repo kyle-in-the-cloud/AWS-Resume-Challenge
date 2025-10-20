@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyle Michael - Cloud Resume Challenge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px auto;
+      max-width: 800px;
+      background-color: #f9fafb;
+      color: #1f2937;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #111827;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      color: #4b5563;
+      margin: 4px 0;
+    }
+    section {
+      background: #fff;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 4px;
+      font-size: 1.2em;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin: 6px 0;
+    }
+    .visitor {
+      text-align: center;
+      font-size: 0.9em;
+      color: #6b7280;
+      margin-top: 10px;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kyle Michael</h1>
+    <p>Aspiring Cloud Engineer</p>
+    <p><a href="mailto:kylemichaelit@gmail.com">Email</a> • <a href="https://github.com/kyle-in-the-cloud">GitHub</a> • <a href="https://www.linkedin.com/in/kylemichael-/">LinkedIn</a></p>
+    <p> Visitors: <span id="visitor-count">—</span></p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      IT Technician skilled in optimizing system performance and user experience. Pursuing a transition into Cloud Engineering with a focus on secure, cost-effective, and scalable cloud solutions.
+      Currently studying AWS services and working toward becoming a certified Cloud Engineer.
+    </p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Amazon Web Services (AWS):</strong> Hands-on experience with core services such as S3, EC2, VPC, ECS, and CloudFront through personal learning projects and the Cloud Resume Challenge.</li>
+      <li><strong>Python:</strong> Basic scripting for automation, file handling, and simple serverless functions using AWS Lambda.</li>
+      <li><strong>Version Control:</strong> Familiar with Git and GitHub for managing code, tracking changes, and collaborating on projects.</li>
+      <li><strong>AI Tools:</strong> Leverage tools like ChatGPT and GitHub Copilot to accelerate learning, troubleshoot code, and generate efficient Python and PowerShell scripts..</li>
+      <li><strong>Networking & Web Hosting:</strong> Understanding of DNS, HTTP/HTTPS, and hosting static websites using AWS S3 and CloudFront.</li>
+    </ul>
+    <p><em>Currently learning:</em> AWS IAM, Lambda functions, and Infrastructure as Code (CloudFormation & Terraform)</p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Cloud Resume Challenge</strong> — Built this resume as a static website hosted on AWS S3 and CloudFront with a visitor counter using Lambda, API Gateway, and DynamoDB.</li>
+      <li><strong>AWS Static Website</strong> — Deployed a personal website using S3, Route 53, and ACM for HTTPS.</li>
+      <li><strong>Python File Encryption App</strong> — Created a simple Python tool to encrypt and decrypt files using keys and basic cryptography.</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li>
+        <strong>Associate of Applied Science in Networking and CyberSecurity</strong> — Grossmont College (2021)
+        <br>
+        Focus on network security, ethical hacking basics, and information assurance principles.
+      </li>
+      <li>
+        <strong>Associate of Applied Science in Information Technology</strong> — Grossmont College (2021)
+        <br>
+        Coursework included networking fundamentals, operating systems, and computer hardware support.
+      </li>
+
+    </ul>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>AWS Certified <strong>Solutions Architect – Associate</strong></li>
+      <li>AWS Certified <strong>Cloud Practitioner</strong></li>
+      <li>Microsoft Certified: <strong>Azure Administrator Associate</strong></li>
+      <li>CompTIA <strong>Cloud+</strong></li>
+      <li>CompTIA <strong>Network+</strong></li>
+      <li>CompTIA <strong>A+</strong></li>
+    </ul>
+  </section>
+
+  <div class="visitor">
+    <p>This visitor counter is powered by AWS Lambda, API Gateway, and DynamoDB.</p>
+  </div>
+
+  <script>
+    const COUNTER_API = "https://zsvfnpzhid.execute-api.us-east-1.amazonaws.com/prod/visit";
+    (async () => {
+      try {
+        const res = await fetch(COUNTER_API);
+        const data = await res.json();
+        document.getElementById("visitor-count").textContent = data.count ?? "—";
+      } catch (e) {
+        // fail silently if backend not connected yet
+      }
+    })();
+  </script>
+</body>
+</html>
