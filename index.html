@@ -66,37 +66,65 @@
 <body>
   <header>
     <h1>Kyle Michael</h1>
-    <p>Aspiring Cloud Engineer</p>
-    <p><a href="mailto:kylemichaelit@gmail.com">Email</a> • <a href="https://github.com/kyle-in-the-cloud">GitHub</a> • <a href="https://www.linkedin.com/in/kylemichael-/">LinkedIn</a></p>
+    <p>NOC Technician | Aspiring Cloud Engineer</p>
+    <p>
+      <a href="mailto:kylemichaelit@gmail.com">Email</a> •
+      <a href="https://github.com/kyle-in-the-cloud">GitHub</a> •
+      <a href="https://www.linkedin.com/in/kylemichael-/">LinkedIn</a> •
+      <a href="https://www.kylemichaelit.com">Portfolio</a>
+    </p>
     <p> Visitors: <span id="visitor-count">—</span></p>
   </header>
 
   <section>
     <h2>About Me</h2>
     <p>
-      IT Technician skilled in optimizing system performance and user experience. Pursuing a transition into Cloud Engineering with a focus on secure, cost-effective, and scalable cloud solutions.
-      Currently studying AWS services and working toward becoming a certified Cloud Engineer.
+      IT Technician with hands-on experience in systems support and AWS-based cloud projects. Focused on transitioning into Cloud Engineering with an emphasis on secure, scalable, and cost-efficient infrastructure.
     </p>
   </section>
 
   <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Amazon Web Services (AWS):</strong> Hands-on experience with core services such as S3, EC2, VPC, ECS, and CloudFront through personal learning projects and the Cloud Resume Challenge.</li>
-      <li><strong>Python:</strong> Basic scripting for automation, file handling, and simple serverless functions using AWS Lambda.</li>
-      <li><strong>Version Control:</strong> Familiar with Git and GitHub for managing code, tracking changes, and collaborating on projects.</li>
-      <li><strong>AI Tools:</strong> Leverage tools like ChatGPT and GitHub Copilot to accelerate learning, troubleshoot code, and generate efficient Python and PowerShell scripts..</li>
-      <li><strong>Networking & Web Hosting:</strong> Understanding of DNS, HTTP/HTTPS, and hosting static websites using AWS S3 and CloudFront.</li>
-    </ul>
-    <p><em>Currently learning:</em> AWS IAM, Lambda functions, and Infrastructure as Code (CloudFormation & Terraform)</p>
-  </section>
+  <h2>Skills</h2>
+  <ul>
+    <li>
+      <strong>AWS Architecture & Services:</strong> VPC (public/private subnets), EC2, Auto Scaling Groups, Application Load Balancer, RDS (Multi-AZ), EFS, S3, CloudFront, Route 53.
+    </li>
+    <li>
+      <strong>Serverless & Automation:</strong> AWS Lambda, CloudWatch Alarms, AWS SNS, event-driven workflows.
+    </li>
+    <li>
+      <strong>Security & Networking:</strong> IAM (least privilege), Security Groups, network segmentation, bastion host access, private resource isolation.
+    </li>
+    <li>
+      <strong>Infrastructure as Code:</strong> Terraform for provisioning repeatable, version-controlled AWS infrastructure.
+    </li>
+    <li>
+      <strong>DevOps & Containerization:</strong> Docker, Amazon ECR, ECS, CI/CD basics
+    </li>
+    <li>
+      <strong>Programming & Tooling:</strong> Python, Git & GitHub, monitoring with CloudWatch
+    </li>
+  </ul>
+</section>
 
   <section>
     <h2>Projects</h2>
     <ul>
-      <li><strong>Cloud Resume Challenge</strong> — Built this resume as a static website hosted on AWS S3 and CloudFront with a visitor counter using Lambda, API Gateway, and DynamoDB.</li>
-      <li><strong>AWS Static Website</strong> — Deployed a personal website using S3, Route 53, and ACM for HTTPS.</li>
-      <li><strong>Python File Encryption App</strong> — Created a simple Python tool to encrypt and decrypt files using keys and basic cryptography.</li>
+      <li>
+        <strong>ChatOps Automation on AWS</strong> - Built a serverless Slack-based operations tool using AWS Lambda, CloudWatch, and IAM to automate monitoring and incident response.
+      </li>
+      <li>
+        <strong>Highly Available AWS Architecture</strong> - Designed a multi-AZ, auto-scaling infrastructure with ALB, RDS Multi-AZ, EFS, and Terraform following AWS Reliability best practices.
+      </li>
+      <li>
+        <strong>Secure Application Deployment on AWS</strong> - Implemented a security first VPC architecture with public/private subnets, ALB only ingress, bastion access,   and least privilege IAM.
+      </li>
+      <li>
+        <strong>Event Announcement System on AWS</strong> - Built a serverless notification platform using Lambda, SNS, and DynamoDB to automatically send event updates.
+      </li>
+      <li>
+        <strong>Infrastructure as Code with Terraform</strong> - Deployed a dynamic website using Terraform, ensuring reproducible, secure, and version-controlled cloud infrastructure.
+      </li>
     </ul>
   </section>
   
@@ -104,23 +132,21 @@
     <h2>Education</h2>
     <ul>
       <li>
-        <strong>Associate of Applied Science in Networking and CyberSecurity</strong> — Grossmont College (2021)
-        <br>
-        Focus on network security, ethical hacking basics, and information assurance principles.
+        <strong>Associate of Applied Science in Networking and Cybersecurity</strong>, Grossmont College - 2021  
+        Focus: Network Security, Ethical Hacking, and Information Assurance.
       </li>
       <li>
-        <strong>Associate of Applied Science in Information Technology</strong> — Grossmont College (2021)
-        <br>
-        Coursework included networking fundamentals, operating systems, and computer hardware support.
+        <strong>Associate of Applied Science in Information Technology</strong>, Grossmont College - 2021  
+        Focus: Networking Fundamentals, Operating Systems, and Hardware Support.
       </li>
-
     </ul>
   </section>
+
 
   <section>
     <h2>Certifications</h2>
     <ul>
-      <li>AWS Certified <strong>Solutions Architect – Associate</strong></li>
+      <li>AWS Certified <strong>Solutions Architect - Associate</strong></li>
       <li>AWS Certified <strong>Cloud Practitioner</strong></li>
       <li>Microsoft Certified: <strong>Azure Administrator Associate</strong></li>
       <li>CompTIA <strong>Cloud+</strong></li>
@@ -141,13 +167,9 @@
         const data = await res.json();
         document.getElementById("visitor-count").textContent = data.count ?? "—";
       } catch (e) {
-        // fail silently if backend not connected yet
       }
     })();
   </script>
+  
 </body>
 </html>
-
-
-
-
