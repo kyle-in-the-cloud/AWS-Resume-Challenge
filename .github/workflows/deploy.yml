@@ -2,16 +2,15 @@ name: Deploy index.html to S3 (OIDC) + Invalidate CloudFront
 
 on:
   push:
-    branches: [ "main" ]             # change if your default branch differs
+    branches: [ "main" ]
     paths:
-      - "index.html"                 # adjust if your file lives elsewhere (e.g., site/index.html)
+      - "index.html"
       - ".github/workflows/deploy-index.yml"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    # Needed for GitHub OIDC
     permissions:
       id-token: write
       contents: read
@@ -35,7 +34,7 @@ jobs:
           role-to-assume: ${{ env.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ env.AWS_REGION }}
 
-      # Upload ONLY index.html with no-cache so browsers fetch the newest HTML
+      # Upload ONLY index.html
       - name: Upload index.html with no-cache
         run: |
           aws s3 cp "$SITE_FILE" "s3://${S3_BUCKET}/${DEST_KEY}" \
